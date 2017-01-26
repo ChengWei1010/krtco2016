@@ -1,0 +1,33 @@
+/*********************** news小視窗 **************************/
+.md-trigger {
+	border: none;
+	padding: 8px 12px;
+	width: 100%;
+	color: black;
+	background-color: rgba(0,0,0,0);
+	color:white;
+	font-family: Microsoft JhengHei;
+	font-size: 18px;
+	font-weight: 50px;
+	letter-spacing: 1px;
+	text-align: left;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	margin: 3px 2px;
+	border-radius: 2px;}
+.md-trigger:hover {
+	background: white;
+	color: black;
+}
+.md-close{
+	background-color: rgba(0,0,0,0);
+	border: none;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	padding: 0px;
+	position: absolute;
+	right:30px;
+}

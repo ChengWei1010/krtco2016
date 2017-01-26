@@ -1,0 +1,31 @@
+/*********************** news小視窗 **************************/
+.md-trigger {
+	border: none;
+	padding: 8px 12px;
+	width: 100%;
+	background: white;
+	color: black;
+	font-family: 'Lato', Calibri, Arial, sans-serif,Microsoft JhengHei;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-align: left;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+
+	margin: 3px 2px;
+	border-radius: 2px;}
+.md-trigger:hover {
+	background: black;
+	color: white;
+}
+.md-close{
+	border: none;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	padding: 0px;
+	position: absolute;
+	right:30px;
+}

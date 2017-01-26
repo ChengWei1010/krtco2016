@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>【高捷三向度-T.H.P】</title><link rel="shortcut icon" href="images/title.png" />
+	<!-- volume -->
+    <script type="text/javascript">
+        function setVolume()
+        {
+            mySound=document.getElementById("sound");
+            mySound.volume=0.1;
+        }
+        window.onload=setVolume;
+    </script>
+	<style>
+		html, body{
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			background-color:#000;}
+		@media screen and (min-width: 1000px) {
+			.b1{background-image:url(index/banner1.jpg);}
+			.b2{background-image:url(index/banner2.jpg);}
+			.b3{background-image:url(index/banner3.jpg);}
+			.b4{background-image:url(index/banner4.jpg);}
+			#banner-box div{
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				display: none;
+			}
+			#main{
+				margin: 0 auto;
+				height: 85px;
+				padding: 0px;
+				text-align: center;
+				/*一個按鈕：*/
+				/*padding: 120px 78px 0 78px;*/
+			}
+			#link{
+				margin: 0 auto;
+				width: 160px;
+				padding: 8px 80px;
+				text-align: center;
+				height: 50px;
+			}
+			#content{
+				margin: 0px auto;
+				bottom: 2%;
+				position: fixed;
+				width: 300px;
+				margin-left: -150px;
+				left: 50%;
+				text-align: center;
+				z-index: 9999;
+			}
+			.main-btn{
+				width: 115px;
+				float:left;
+				padding: 0 15px 0px 20px;
+			}
+			.link-btn{
+				width: 50px;
+				float:left;
+				padding:0 15px;
+			}
+		}
+		@media screen and (max-width: 1000px) {
+			.b1{background-image:url(index/phone.jpg);}
+			.b2{background-image:url(index/phone.jpg);}
+			.b3{background-image:url(index/phone.jpg);}
+			#banner-box div{
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-position: 50%;
+				background-repeat: no-repeat;
+				background-size: 100%;
+				overflow:hidden;
+			}
+			#main{
+				margin: 0 auto;
+				height: 200px;
+				text-align: center;
+				padding:10px ;
+			}
+			#link{
+				margin: 0 auto;
+				width: 300px;
+				padding: 8px 100px;
+				text-align: center;
+				height: 90px;
+			}
+			#content{
+				margin: 0px auto;
+				bottom: 0px;
+				position: fixed;
+				width: 600px;
+				margin-left: -300px;
+				left: 50%;
+				text-align: center;
+				z-index: 9999;
+				padding-bottom: 8%;
+			}
+			.main-btn{
+				width: 200px;
+				float:left;
+				padding:0 40px;
+			}
+			.link-btn{
+				width: 80px;
+				float:left;
+				padding:0 30px;
+			}
+		}
+	</style>
+		<script src="index/js/jquery.js"></script>
+		<script>
+			function loopBanner(index)
+			{
+				var arrImg = $("#banner-box").children("div");
+				var total = arrImg.length;
+				
+				if( !total ) return false;
+				if( index >= total ) index = 0;
+				
+				var next = index + 1;
+				if( next > total-1 ) next = 0;
+
+				$(arrImg[index]).show();
+				$(arrImg[next]).show();
+				$(arrImg[next]).css('opacity', '0');
+				$(arrImg[next]).animate({opacity:'1'}, 4000);
+				$(arrImg[index]).animate({opacity:'0'}, 6000, function(){
+					$(arrImg[index]).hide();
+					$(arrImg[next]).hide();
+					loopBanner(index+1) }
+				);
+			}
+			
+			$(document).ready(function(){ 
+				loopBanner(0);		// 从第 0 个开始播放
+			}) 
+		</script>
+	</head>
+	
+	<body>	
+		<div id="content">
+			<div id="main">
+				<a href="home.php"><img src="index/enter1.png" alt="" class="main-btn"></a>
+				<a href="video.php"><img src="index/enter4.png" alt="" class="main-btn"></a>
+			</div>
+			<div id="link">
+				<a target="_blank" href="https://www.facebook.com/krtc.competition2016"><img src="index/fb.png" alt="fb" class="link-btn"></a>
+				<a target="_blank" href="mailto:2016krtcthp@gmail.com"><img src="index/mail.png" alt="mail" class="link-btn"></a>
+			</div>
+		</div>
+		<div id="banner-box">
+			<div class="b1"></div>
+			<div class="b2"></div>
+			<div class="b3"></div>
+			<div class="b4"></div>
+		</div>
+	</body>
+	 <embed src="music.mp3" volume="0" autostart=true hidden=true loop=true>
+</html>

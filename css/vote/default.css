@@ -1,0 +1,32 @@
+.md-trigger {
+	background: #E6E6FA;
+	color: black;
+	font-family: 'Lato', Calibri, Arial, sans-serif,Microsoft JhengHei;
+	font-size: 15px;
+	letter-spacing: 1px;
+	text-align: left;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	border-radius: 3px;}
+.md-trigger:hover {
+	background:#ADD8E6;
+	color: 	#4169E1;
+}
+.md-close{
+	cursor: pointer;
+	display: inline-block;
+	position: absolute;
+	right:0px;
+	top:0px;
+
+}
+@media screen and (max-width: 1120px) {
+	.md-close{
+	cursor: pointer;
+	display: inline-block;
+	position: absolute;
+	right:0px;
+	width:60px;
+	}	
+}

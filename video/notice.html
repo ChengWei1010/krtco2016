@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>【高捷三向度-T.H.P】</title>
+    <link rel="shortcut icon" href="images/title.png" /> 
+    <link rel="stylesheet" href="css/mine.css">
+    <style>
+        #link{
+            background-color: #F7DD67;
+            box-shadow: 3px 3px 9px #5D4803;
+            z-index: 999;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script>
+        //改變瀏覽列大小
+        $(function(){
+            var win=$(window),
+                nav=$("nav"),
+                navImg=$("navImg");
+            function inView () {
+                if(win.scrollTop()>=160){
+                    nav.addClass('nav-View');
+                    navImg.addClass('navImg-View');
+                }
+                else{
+                    nav.removeClass('nav-View');
+                    navImg.removeClass('navImg-View');
+                }
+            }
+            win.scroll(inView);
+            inView();
+        })
+    </script>
+</head>
+<body>
+    <!-- To top fb-->
+        <div class="goFbBox" style="top: 195px;">
+            <a href="https://www.facebook.com/krtc.competition2016" target="_blank"><img src="images/fb.gif" class="goFbImg"></a>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script>
+                //to top
+                $(function(){
+                    $(window).resize(function(){
+                        var _winH = $(window).height();
+                        $('.goFbBox').css('top', _winH-118);
+                        $(window).scroll(function(){                
+                            var scrollTop = $(document).scrollTop();
+                            $('.goFbBox').stop().animate({
+                                top: _winH + scrollTop -118
+                            },400);
+                        });
+                    }).resize();
+
+                });
+            </script>        
+        </div>
+    <header>
+        <div class="title">
+            <div class="logo"><a href="home.php"><img class="logoSize" src="img/logo.png"></a></div>
+            <div class="countdown">          
+                <!-- <span style="float:left;">網路投票&nbsp;&nbsp;</span>
+                <span style="float:right;">&nbsp;&nbsp;Days</span>
+                <span id="d" style="font-size:28px;color:red;float:right;"></span><br><hr> -->
+                <!-- <span style="float:left;">公布入圍&nbsp;&nbsp;</span>
+                <span style="float:right;">&nbsp;&nbsp;Days</span>
+                <span id="e" style="font-size:28px;color:red;float:right;"></span><br><hr> -->
+                <span style="float:left;">頒獎典禮&nbsp;&nbsp;</span>
+                <span style="float:right;">&nbsp;&nbsp;Days</span>
+                <span id="f" style="font-size:28px;color:red;float:right;"></span><br><hr>
+            </div>
+            <audio controls autoplay class="music">
+                    <source src="music.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+            </audio>  
+        <!-- countdown-->
+        <script>
+                //倒數計時器
+                function update(){
+                    var a=(new Date).getTime(),
+                    b=(target_date-a)/1e3;
+                    days=parseInt(b/86400),b%=86400,
+                    $days.innerHTML=pad(days,2)
+                }
+                function pad(a,b){
+                    for(var c=a+"";c.length<b;)
+                        c="0"+c;
+                    return c
+                }
+                var days,
+                    now=new Date,
+                    current_year=now.getFullYear(),
+                    next_year=current_year+1,
+                    // target_date=new Date("May 9, "+current_year).getTime(),
+                    // $days=document.getElementById("d");
+                    // update(),setInterval(update,1e3);
+                    // target_date=new Date("May 23, "+current_year).getTime(),
+                    // $days=document.getElementById("e");
+                    // update(),setInterval(update,1e3);
+                    target_date=new Date("May 28, "+current_year).getTime(),
+                    $days=document.getElementById("f");
+                    update(),setInterval(update,1e3);
+        </script>
+        </div>
+        <nav class="nav" id="nav">
+            <div >
+                <img src="img/v1.png" alt="." id="dv">
+            </div>
+            <ul class="menu">
+                <li></li>
+                <a href="home.php"><li class="menu-button" id="home">首頁</li></a>|
+                <a href="news.php"><li class="menu-button" id="news">最新消息</li></a>|
+                <a href="origin.html"><li class="menu-button" id="origin">活動介紹</li><a>|
+                <a href="info.html">
+                    <li class="menu-button" id="info">比賽資訊
+                        <ul class="drop-menu">
+                            <a href="info.html#s1"><li class="drop">報名須知</li></a>
+                            <a href="info.html#s2"><li class="drop">相關日程</li></a>
+                            <a href="info.html#s3"><li class="drop">作品繳交</li></a>
+                            <a href="info.html#s4"><li class="drop">評分方式</li></a>
+                            <a href="info.html#s5"><li class="drop">評審簡介</li></a>
+                            <a href="info.html#s6"><li class="drop">獎金資訊</li></a>
+                        </ul>
+                    </li></a>|
+                <!-- <a href="apply.html"><li  class="menu-button" id="apply">我要報名</li></a>| -->
+                <!-- <a href="vote.php"><li  class="menu-button" id="vote">我要投票</li></a>| -->
+                <a href="video.php"><li class="menu-button" id="video">影片觀賞</li></a>|
+                <a href="download.html"><li class="menu-button" id="download">相關下載</li></a>|
+                <a href="notice.html"><li class="menu-button" id="link">活動注意事項</li></a>
+            </ul>
+        </nav>  
+    </header>
+    <div class="content">
+        <div class="text-cont">
+            <ol>
+                <li>
+                    <!-- 1. -->  參賽作品必須為未曾參加任何公開比賽、公開發表、公開放映、展出之作品。作品如涉及著作權之侵權及不法行為，概由參賽團隊自行負責，並取消其得獎資格及追還獎金及獎狀，倘造成主辦機關相關損害，參賽者需負損害賠償責任。<br><br>
+                </li>
+                <li>    
+                    <!-- 2. -->  參賽作品如有下列情事之一者，主辦單位得逕取消獲獎資格：（如：經檢舉、主辦單位確認，即取消參賽資格，不予遞補名次）<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( 1 ) 抄襲他人或已授權經紀之上市與未上市之作品，經查證屬實者<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( 2 ) 違反著作權法或其他法律相關規定者<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( 3 ) 曾於公開徵件比賽獲獎之作品（含連作之部分作品）不得參賽<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( 4 ) 比賽之作品必須為未經發表過的作品<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( 5 ) 不願接受主辦單位安排展出影片作品或放棄得獎獎項者<br><br>
+                </li>
+                <li>
+                    <!-- 3. -->  參賽作品不得使用非法取得下載之音樂、影像或影片片段。參賽團隊若有抵觸任何著作權之法律，一切法律責任由參賽團隊承擔。<br><br>
+                </li>
+                <li>
+                    <!-- 4. -->  參賽團隊之作品如涉及智慧財產權者，主辦機關取得全部權利。<br><br>
+                </li>
+                <li>
+                    <!-- 5. -->  參賽作品內容如不符規定或繳交文件不完整者，不得評選，參賽團隊不得異議。<br><br>
+                </li>
+                <li>
+                    <!-- 6. -->  本次活動若參賽作品內容涉及侵權事宜、資料填寫不實等違反參賽規定，而衍生出相關法律或賠償事宜，則由參賽團隊自行負責，與活動相關單位無關，必要時得撤銷資格，並同意繳回得獎獎金及其他所有獎項相關物品。<br><br>
+                </li>
+                <li>
+                    <!-- 7. -->  請派員參與比賽說明會，未與會之參賽團隊，將酌收保證金內之新台幣100元整為郵資，將活動資料袋寄至參賽團隊指定地點。(若非因主辦單位過失導致未收到郵件之事由，主辦單位不負任何責任) 。<br><br>
+                </li>
+                <li>
+                    <!-- 8. -->  未於指定時間內完成報到及未派員出席與會說明會之參賽團隊，由主辦單位代抽活動主題，不得異議，並將抽籤結果公佈於活動官網。<br><br>
+                </li>
+                <li>
+                    <!-- 9. -->  入圍隊伍請務必派出至少一位代表出席頒獎典禮，缺席之入圍隊伍主辦單位將沒收全額保證金。<br><br>
+                </li>
+                <li>
+                    <!-- 10. --> 主辦單位於比賽結束後不退回繳交之參賽作品，參賽團隊若有需要請於繳件前自行備份留存。<br><br>
+                </li>
+                <li>
+                    <!-- 11. --> 作品中所需配樂可至相關連結中之亞洲唱片網站搜尋，並於實體繳交時註明所使用之音樂。<br><br>
+                </li>
+                <li>
+                    <!-- 12. --> 所有影片以主辦單位上傳為準，為維護參賽者權益，請勿自行上傳影片。<br><br>
+                </li>
+                <li>
+                    <!-- 13. --> 依所得稅法規定，每人單次得獎獎品市價超過新臺幣1,000元(含)以上者，需列入個人綜合所得稅申報；超過新臺幣20,000元(含)以上者，得獎者應自行負擔10%之機會中獎所得稅。<br><br>
+                </li>
+                <li>
+                    <!-- 14. --> 主辦單位僅以「網站、電子郵件、電話」三種方式通知獲獎訊息。<br><br>
+                </li>
+                <li>
+                    <!-- 15. --> 如有未盡事宜，主辦單位得隨時補充修正公佈之，並享有最終解釋及裁示權。<br><br>
+                </li>
+                <li>
+                    <!-- 16. -->參賽團隊須共同維護捷運行車安全。(於月台層不可跨越黃線、不可影響月台門/車門關閉等危險動作)<br><br>
+                </li>
+                <li>
+                    <!-- 17. -->若須拍攝車站人員(站務人員、清潔、保全、志工)，應事先告知，以尊重及維護公司形象。<br><br>
+                </li>
+                <li>
+                    <!-- 18. --> 凡參賽者視為同意並遵循上述之規定。<br>
+                </li>
+        <img src="img/mrt.png" alt="mrt" width="150px" style="float:right;"><br><br><br><br><br>
+        </div>
+    </div>
+    <footer>
+        <table>
+            <tr>
+                <td style="width:5%;">主辦<br>單位</td>
+                <td style="width:31%;"><a target="_blank" href="http://www.krtco.com.tw/"><img src="img/main.png" alt="ks" class="logos"></a></td>
+                <td style="width:5%;">執行<br>單位</td>
+                <td style="width:31%;"><a target="_blank" href="http://www.bm.nsysu.edu.tw/bin/home.php"><img src="img/bm.png" alt="nsysuBM" class="logos"></a></td>
+                <td style="width:30%;">
+                    聯絡信箱 2016krtcthp@gmail.com <br>聯絡電話 0905-380-245
+                </td>
+
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td style="width:5%;">贊助<br>單位</td>
+                <td style="width:65%;">
+                    <a target="_blank" href="http://www.csc.com.tw/csc/gef/index.asp"><img src="img/metal.png" alt="metal" class="metal"></a>
+                    <a target="_blank" href="https://www.ubot.com.tw/"><img src="img/bank.png" alt="asia" class="bank"></a>
+                    <a target="_blank" href="http://www.asia-records.com.tw/"><img src="img/asia.png" alt="asia" class="asia"></a>
+                    <a target="_blank" href="https://cn.unionpay.com/"><img src="img/unionpay.png" alt="cn" class="unionpay"></a>
+                </td> 
+                <td style="width:18%;">
+                    <a target="_blank" href="https://www.facebook.com/krtc.competition2016"><img src="img/fb.png" alt="fb" class="contact-icon"></a>
+                    <a target="_blank" href="mailto:2016krtcthp@gmail.com"><img src="img/mail.png" alt="mail" class="contact-icon"></a>
+                </td>               
+            </tr>
+        </table>
+    </footer>
+</body>
+</html>

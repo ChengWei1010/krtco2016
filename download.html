@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>【高捷三向度-T.H.P】</title>
+    <link rel="shortcut icon" href="images/title.png" /> 
+    <link rel="stylesheet" href="css/mine.css">
+    <style>
+        #download{
+            background-color: #F7DD67;
+            box-shadow: 3px 3px 9px #5D4803;
+        }
+        .people{
+            width:350px; 
+            float:right;
+        }
+        
+        @media screen and (max-width: 1120px) {
+            .people{
+                width:300px;
+            }
+        }
+        </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script>
+        //改變瀏覽列大小
+        $(function(){
+            var win=$(window),
+                nav=$("nav"),
+                navImg=$("navImg");
+            function inView () {
+                if(win.scrollTop()>=160){
+                    nav.addClass('nav-View');
+                    navImg.addClass('navImg-View');
+                }
+                else{
+                    nav.removeClass('nav-View');
+                    navImg.removeClass('navImg-View');
+                }
+            }
+            win.scroll(inView);
+            inView();
+        })
+    </script>
+</head>
+<body>
+    <!-- To top fb-->
+        <div class="goFbBox" style="top: 195px;">
+            <a href="https://www.facebook.com/krtc.competition2016"target="_blank" ><img src="images/fb.gif" class="goFbImg"></a>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script>
+                //to top
+                $(function(){
+                    $(window).resize(function(){
+                        var _winH = $(window).height();
+                        $('.goFbBox').css('top', _winH-118);
+                        $(window).scroll(function(){                
+                            var scrollTop = $(document).scrollTop();
+                            $('.goFbBox').stop().animate({
+                                top: _winH + scrollTop -118
+                            },400);
+                        });
+                    }).resize();
+
+                });
+            </script>        
+        </div>
+    <header>
+        <div class="title">
+            <div class="logo"><a href="home.php"><img class="logoSize" src="img/logo.png"></a></div>            
+            <div class="countdown">     
+                <!-- <span style="float:left;">網路投票&nbsp;&nbsp;</span>
+                <span style="float:right;">&nbsp;&nbsp;Days</span>
+                <span id="d" style="font-size:28px;color:red;float:right;"></span><br><hr> -->
+                <!-- <span style="float:left;">公布入圍&nbsp;&nbsp;</span>
+                <span style="float:right;">&nbsp;&nbsp;Days</span>
+                <span id="e" style="font-size:28px;color:red;float:right;"></span><br><hr> -->
+                <span style="float:left;">頒獎典禮&nbsp;&nbsp;</span>
+                <span style="float:right;">&nbsp;&nbsp;Days</span>
+                <span id="f" style="font-size:28px;color:red;float:right;"></span><br><hr> 
+            </div>
+            <audio controls autoplay class="music">
+                    <source src="music.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+            </audio>  
+        <!-- countdown-->
+        <script>
+                //倒數計時器
+                function update(){
+                    var a=(new Date).getTime(),
+                    b=(target_date-a)/1e3;
+                    days=parseInt(b/86400),b%=86400,
+                    $days.innerHTML=pad(days,2)
+                }
+                function pad(a,b){
+                    for(var c=a+"";c.length<b;)
+                        c="0"+c;
+                    return c
+                }
+                var days,
+                    now=new Date,
+                    current_year=now.getFullYear(),
+                    next_year=current_year+1,
+                    // target_date=new Date("May 9, "+current_year).getTime(),
+                    // $days=document.getElementById("d");
+                    // update(),setInterval(update,1e3);
+                    // target_date=new Date("May 23, "+current_year).getTime(),
+                    // $days=document.getElementById("e");
+                    // update(),setInterval(update,1e3);
+                    target_date=new Date("May 28, "+current_year).getTime(),
+                    $days=document.getElementById("f");
+                    update(),setInterval(update,1e3);
+        </script>
+        </div>
+        <nav class="nav" id="nav">
+            <div >
+                <img src="img/v1.png" alt="." id="dv">
+            </div>
+            <ul class="menu">
+                <li></li>
+                <a href="home.php"><li class="menu-button" id="home">首頁</li></a>|
+                <a href="news.php"><li class="menu-button" id="news">最新消息</li></a>|
+                <a href="origin.html"><li class="menu-button" id="origin">活動介紹</li><a>|
+                <a href="info.html">
+                    <li class="menu-button" id="info">比賽資訊
+                        <ul class="drop-menu">
+                            <a href="info.html#s1"><li class="drop">報名須知</li></a>
+                            <a href="info.html#s2"><li class="drop">相關日程</li></a>
+                            <a href="info.html#s3"><li class="drop">作品繳交</li></a>
+                            <a href="info.html#s4"><li class="drop">評分方式</li></a>
+                            <a href="info.html#s5"><li class="drop">評審簡介</li></a>
+                            <a href="info.html#s6"><li class="drop">獎金資訊</li></a>
+                        </ul>
+                    </li></a>|
+                <!-- <a href="apply.html"><li  class="menu-button" id="apply">我要報名</li></a>| -->
+                <!-- <a href="vote.php"><li  class="menu-button" id="vote">我要投票</li></a>| -->
+                <a href="video.php"><li class="menu-button" id="video">影片觀賞</li></a>|
+                <a href="download.html"><li class="menu-button" id="download">相關下載</li></a>| 
+                <a href="notice.html"><li class="menu-button" id="link">活動注意事項</li></a>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="text-cont" style="font-size: 25px;line-height: 44px; padding: 50px 0px 50px 50px;" >   
+            <img src="images/people09.png" class="people">
+            <img src="images/camera.png" style="width:130px; float:right; padding-top:200px;">
+            <ol>
+
+                <li>
+                    <a href="https://drive.google.com/open?id=0B-Wkgl4vkF9IeExjUWxPVjV6OWs" target="_blank">參賽隊伍及作品資訊</a><br>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/open?id=0B-Wkgl4vkF9IbVJGZzM1dXVuTjQ" target="_blank">亞洲音樂申請表單</a><br>
+                </li>
+                <li>    
+                    <a href="https://drive.google.com/file/d/0BxXeH99Fxff-VTNnSHo1Um9iSGs/view" target="_blank">音樂著作財產權授權使用同意書</a><br>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/open?id=0B-Wkgl4vkF9IZjA2aU5MWmpaZ1k" target="_blank">原創音樂創作資料</a><br>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/open?id=0B-Wkgl4vkF9IdVl4YnpBWFZMcTg" target="_blank">著作財產權讓與同意書</a><br>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/file/d/0B_mPLigDWD0QVHlmVFg1R3FyOXM/edit" target="_blank">高捷Logo圖檔</a><br>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/file/d/0B_mPLigDWD0QaW4zaUFfQnVWbFU/edit" target="_blank">Logo嵌入範例</a>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/file/d/0BxXeH99Fxff-RU5CZ3REVTRJdFk/view?usp=sharing" target="_blank">比賽說明會PPT</a>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/file/d/0BxXeH99Fxff-ZHJsMkhrY0gyVHc/view?usp=sharing" target="_blank">說明會主題抽籤結果</a>
+                </li>                
+            </ol>
+        </div>
+    </div>
+    <footer>
+        <table>
+            <tr>
+                <td style="width:5%;">主辦<br>單位</td>
+                <td style="width:31%;"><a target="_blank" href="http://www.krtco.com.tw/"><img src="img/main.png" alt="ks" class="logos"></a></td>
+                <td style="width:5%;">執行<br>單位</td>
+                <td style="width:31%;"><a target="_blank" href="http://www.bm.nsysu.edu.tw/bin/home.php"><img src="img/bm.png" alt="nsysuBM" class="logos"></a></td>
+                <td style="width:30%;">
+                    聯絡信箱 2016krtcthp@gmail.com <br>聯絡電話 0905-380-245
+                </td>
+
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td style="width:5%;">贊助<br>單位</td>
+                <td style="width:65%;">
+                    <a target="_blank" href="http://www.csc.com.tw/csc/gef/index.asp"><img src="img/metal.png" alt="metal" class="metal"></a>
+                    <a target="_blank" href="https://www.ubot.com.tw/"><img src="img/bank.png" alt="asia" class="bank"></a>
+                    <a target="_blank" href="http://www.asia-records.com.tw"><img src="img/asia.png" alt="asia" class="asia"></a>
+                    <a target="_blank" href="https://cn.unionpay.com/"><img src="img/unionpay.png" alt="cn" class="unionpay"></a>
+                </td> 
+                <td style="width:18%;">
+                    <a target="_blank" href="https://www.facebook.com/krtc.competition2016"><img src="img/fb.png" alt="fb" class="contact-icon"></a>
+                    <a target="_blank" href="mailto:2016krtcthp@gmail.com"><img src="img/mail.png" alt="mail" class="contact-icon"></a>
+                </td>               
+            </tr>
+        </table>
+    </footer>
+</body>
+</html>
